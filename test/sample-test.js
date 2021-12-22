@@ -1,14 +1,14 @@
 /* test/sample-test.js */
-describe("NFTMarket", function() {
+describe("nftMarket", function() {
   it("Should create and execute market sales", async function() {
     /* deploy the marketplace */
-    const Market = await ethers.getContractFactory("NFTMarket")
+    const Market = await ethers.getContractFactory("nftMarket")
     const market = await Market.deploy()
     await market.deployed()
     const marketAddress = market.address
 
     /* deploy the NFT contract */
-    const NFT = await ethers.getContractFactory("NFT")
+    const NFT = await ethers.getContractFactory("nft")
     const nft = await NFT.deploy(marketAddress)
     await nft.deployed()
     const nftContractAddress = nft.address
@@ -48,3 +48,4 @@ describe("NFTMarket", function() {
   })
 })
 
+//NEEDD 4 more tests
